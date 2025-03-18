@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram name="Page-1" id="29jIgGJGPFr3IEsA8Ht5">
+    <mxGraphModel dx="778" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-1" value="Config:train_diffusion_xxx_OOO_workspace.yaml&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;task:~./config/task,裡面說明dataset格式&lt;span style=&quot;font-size: 10px;&quot;&gt;(data以及meta),data的obs所需要訓練內容,&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;指定&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 10px;&quot;&gt;env_runner檔案,dataset指定檔案&lt;/span&gt;&lt;/div&gt;&lt;div&gt;target:&lt;/div&gt;&lt;div&gt;policy:&amp;nbsp; 包含DDIM,crop_shape,等設定&lt;/div&gt;&lt;div&gt;ema:&lt;/div&gt;&lt;div&gt;dataloader:&lt;/div&gt;&lt;div&gt;val_dataloader:&lt;/div&gt;&lt;div&gt;optimizer:&lt;/div&gt;&lt;div&gt;training:&lt;/div&gt;&lt;div&gt;logging:&lt;/div&gt;&lt;div&gt;Checkpoint:&lt;/div&gt;&lt;/blockquote&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="400" height="179" as="geometry" />
+        </mxCell>
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-2" value="Task.xxx_ooo_dataset.py:&lt;div&gt;將dataset(ooxx.zarr)載入到cache中&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="20" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GFFJ7ewiN-PH3S-g19l3-3" target="GFFJ7ewiN-PH3S-g19l3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-3" value="train.py&lt;div&gt;main()讀取cfg中的_target_開始執行workspace&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="420" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GFFJ7ewiN-PH3S-g19l3-4" target="GFFJ7ewiN-PH3S-g19l3-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-4" value="workspace.py&lt;div&gt;透過policy設定指定檔案初始化model以及ema&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="415" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="GFFJ7ewiN-PH3S-g19l3-7" value="policy.py&lt;div&gt;這裡會初始化神經網路model,down_dims=[256,512,1023]表示neural個數&lt;/div&gt;&lt;div&gt;其中有image_obs_encoder用來處理影像資料並設定好欲訓練之特徵維度大小&lt;span style=&quot;font-size: 10px;&quot;&gt;，並讀取img進行resize randomizer normalizer的處理&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=left;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="690" y="400" width="245" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
